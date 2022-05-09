@@ -1,0 +1,997 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://artimimds/RoboGrind/Grinding"
+     xml:base="http://artimimds/RoboGrind/Grinding"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:SOMA="http://www.ease-crc.org/ont/SOMA.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Grinding="http://artimimds/RoboGrind/Grinding#">
+    <owl:Ontology rdf:about="http://artimimds/RoboGrind/Grinding">
+        <owl:imports rdf:resource="http://www.ease-crc.org/ont/SOMA.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#hasCuttingSpeed -->
+
+    <owl:ObjectProperty rdf:about="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:comment>The cutting speed Vc is the distance covered by a tooth in one second. It is expressed in metres per second (m/second)</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#hasMaterial -->
+
+    <owl:ObjectProperty rdf:about="http://artimimds/RoboGrind/Grinding#hasMaterial">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality"/>
+        <owl:inverseOf rdf:resource="http://artimimds/RoboGrind/Grinding#isMaterialOf"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
+        <rdfs:range rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#hasRemoved -->
+
+    <owl:ObjectProperty rdf:about="http://artimimds/RoboGrind/Grinding#hasRemoved">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:comment>link between the removing and the measurement</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#hasTeeth -->
+
+    <owl:ObjectProperty rdf:about="http://artimimds/RoboGrind/Grinding#hasTeeth">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#isMaterialOf -->
+
+    <owl:ObjectProperty rdf:about="http://artimimds/RoboGrind/Grinding#isMaterialOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isQualityOf"/>
+        <rdfs:domain rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Material"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Abrasivity -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Abrasivity">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Parameter"/>
+        <rdfs:comment>depend on type of grain used
+describe with a coefficient</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Aged -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Aged">
+        <rdfs:subClassOf rdf:resource="http://artimimds/RoboGrind/Grinding#Wear"/>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Aluminium_and_Alloys -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Aluminium_and_Alloys">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Material"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">26</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">39</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Blade -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Blade">
+        <rdfs:subClassOf rdf:resource="http://artimimds/RoboGrind/Grinding#Workpiece"/>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Bond_type -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Bond_type">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Parameter"/>
+        <rdfs:comment>Vitrified, resinoid, silicate, shellac, rubber and metal</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Brass_and_Bronze -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Brass_and_Bronze">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Material"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">31</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">40</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#CAD2Path -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#CAD2Path">
+        <rdfs:subClassOf rdf:resource="http://artimimds/RoboGrind/Grinding#Path_Planning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Carbon_Steel -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Carbon_Steel">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Material"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">26</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">37</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Cast_Iron -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Cast_Iron">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Material"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">19</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">33</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Damaged_Blade -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Damaged_Blade">
+        <rdfs:subClassOf rdf:resource="http://artimimds/RoboGrind/Grinding#Blade"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#hasShape"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#MeshShapeData"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParameter"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#DeviceState"/>
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#Material"/>
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#Shape"/>
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#Temperature"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn"/>
+                <owl:someValuesFrom rdf:resource="http://artimimds/RoboGrind/Grinding#Grinding"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#End_Process -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#End_Process">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#TaskInvocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Force_Sensor -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Force_Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#DesignedComponent"/>
+        <rdfs:comment>Part of the robot arm, behind the grinder wheel</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Fresh -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Fresh">
+        <rdfs:subClassOf rdf:resource="http://artimimds/RoboGrind/Grinding#Wear"/>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Glass -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Glass">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Material"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">9</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">17</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Goal_Blade -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Goal_Blade">
+        <rdfs:subClassOf rdf:resource="http://artimimds/RoboGrind/Grinding#Blade"/>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Grade -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Grade">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Parameter"/>
+        <rdfs:comment>Tenacity with which the bond holds the abrasive grains
+A --&gt; G Soft
+J --&gt; P Medium
+Q --&gt; Z Hard</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Grain_size -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Grain_size">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Parameter"/>
+        <rdfs:comment>Higher the number finner is the Grain
+8  --&gt; 24 Coarse Grain
+30 --&gt; 70 Normal Grain
+80 --&gt; 220 Fine Grain
+240 --&gt; 2500 Very fine Grain</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Grind -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Grind">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#PhysicalAction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
+                <owl:someValuesFrom rdf:resource="http://artimimds/RoboGrind/Grinding#Grinder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#executesTask"/>
+                <owl:allValuesFrom rdf:resource="http://artimimds/RoboGrind/Grinding#Removing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart"/>
+                <owl:allValuesFrom rdf:resource="http://artimimds/RoboGrind/Grinding#Grinding"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>During the process we need to check the fore apply on the workpiece to be sure that a certain thresold is not exceeded</rdfs:comment>
+        <rdfs:comment>action of apply forces on a PhyisicalObject to remove materials</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#GrindPlan -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#GrindPlan">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#ActionExecutionPlan"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#hasPhase"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Approaching"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#isPlanFor"/>
+                <owl:someValuesFrom rdf:resource="http://artimimds/RoboGrind/Grinding#Grind"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Grinder -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Grinder">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#DesignedComponent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParameter"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://artimimds/RoboGrind/Grinding#Abrasivity"/>
+                            <rdf:Description rdf:about="http://artimimds/RoboGrind/Grinding#Bond_type"/>
+                            <rdf:Description rdf:about="http://artimimds/RoboGrind/Grinding#Grade"/>
+                            <rdf:Description rdf:about="http://artimimds/RoboGrind/Grinding#Grain_size"/>
+                            <rdf:Description rdf:about="http://artimimds/RoboGrind/Grinding#Structure"/>
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#Material"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isDescribedBy"/>
+                <owl:someValuesFrom rdf:resource="http://artimimds/RoboGrind/Grinding#Wear"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn"/>
+                <owl:someValuesFrom rdf:resource="http://artimimds/RoboGrind/Grinding#Grinding"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isComponentOf"/>
+                <owl:allValuesFrom rdf:resource="http://artimimds/RoboGrind/Grinding#Robot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Material : silicon carbide, Aluminium Oxide
+
+Parametres : Abrasivity, grain size, Grade, Structure, Bond type</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Grinding -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Grinding">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#PhysicsProcess"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
+                <owl:someValuesFrom rdf:resource="http://artimimds/RoboGrind/Grinding#Damaged_Blade"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
+                <owl:someValuesFrom rdf:resource="http://artimimds/RoboGrind/Grinding#Grinder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Alteration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#GrindingFlow -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#GrindingFlow">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#ProcessFlow"/>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Hole -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Hole">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#DependentPlace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Informe_Agent -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Informe_Agent">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#TaskInvocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Lacquers -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Lacquers">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Material"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">14</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Laser -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Laser">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#ArtificialAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Laser_Measurement -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Laser_Measurement">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#TaskInvocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Laser_Measurement_Done -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Laser_Measurement_Done">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#ConditionalSuccedence"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#hasPredecessor"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://artimimds/RoboGrind/Grinding#Laser_Measurement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#hasSuccessor"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://artimimds/RoboGrind/Grinding#Removal_Estimation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Low_Alloy_Steel -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Low_Alloy_Steel">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Material"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">22</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">37</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#MM_to_Remove -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#MM_to_Remove">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Moove_Linear -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Moove_Linear">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#PhysicalAction"/>
+        <rdfs:comment>Action to moove from a point A to a point B in a straigh line</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Moove_LinearPlan -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Moove_LinearPlan">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#ActionExecutionPlan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Old -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Old">
+        <rdfs:subClassOf rdf:resource="http://artimimds/RoboGrind/Grinding#Wear"/>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Path_False -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Path_False">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#ConditionalSuccedence"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#hasPredecessor"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://artimimds/RoboGrind/Grinding#Path_Planning"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#hasSuccessor"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://artimimds/RoboGrind/Grinding#Informe_Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>When the path planning is wrong meaning colision OR Setpoint missing</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Path_Planning -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Path_Planning">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#TaskInvocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Path_True -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Path_True">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#ConditionalSuccedence"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#hasPredecessor"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://artimimds/RoboGrind/Grinding#Path_Planning"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#hasSuccessor"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://artimimds/RoboGrind/Grinding#Remove"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>When the path planning is ok meaning no colision AND Setpoint ok</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Removal_Estimation -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Removal_Estimation">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#TaskInvocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Removal_Estimation_FalseThickness -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Removal_Estimation_FalseThickness">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#ConditionalSuccedence"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#hasPredecessor"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://artimimds/RoboGrind/Grinding#Removal_Estimation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#hasSuccessor"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://artimimds/RoboGrind/Grinding#Informe_Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>When the removal estimation is false due to the removal estimation bigger than the thickness</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Removal_Estimation_FalseThreshold -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Removal_Estimation_FalseThreshold">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#ConditionalSuccedence"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#hasPredecessor"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://artimimds/RoboGrind/Grinding#Removal_Estimation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#hasSuccessor"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://artimimds/RoboGrind/Grinding#End_Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>When the removal estimation is false due to the removal estimation smaller than the Threshold</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Removal_Estimation_True -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Removal_Estimation_True">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#ConditionalSuccedence"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#hasPredecessor"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://artimimds/RoboGrind/Grinding#Removal_Estimation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#hasSuccessor"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://artimimds/RoboGrind/Grinding#Path_Planning"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>When teh removal estimation is possible :
+&gt;Treshold 
+AND
+&lt; Thickness of the wworkpiece</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Remove -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Remove">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#TaskInvocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Removing -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Removing">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Cutting"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExecutedIn"/>
+                <owl:allValuesFrom rdf:resource="http://artimimds/RoboGrind/Grinding#Grinding"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Task where the goal is to remove matter from a PhysicalObject (such as a workpiece)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Removing_Finish -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Removing_Finish">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#ConditionalSuccedence"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#hasPredecessor"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://artimimds/RoboGrind/Grinding#Remove"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#hasSuccessor"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://artimimds/RoboGrind/Grinding#Laser_Measurement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Robot -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Robot">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#ArtificialAgent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn"/>
+                <owl:someValuesFrom rdf:resource="http://artimimds/RoboGrind/Grinding#Grinding"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Rubber -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Rubber">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Material"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">14</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">27</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Simulation -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Simulation">
+        <rdfs:subClassOf rdf:resource="http://artimimds/RoboGrind/Grinding#Path_Planning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Stainless_Steel -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Stainless_Steel">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Material"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">14</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">33</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Structure -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Structure">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Parameter"/>
+        <rdfs:comment>Describe the density of the grinder (space between grain)
+1 --&gt; 8 dense
+9 --&gt; 15+ Open</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Titanium_Alloys -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Titanium_Alloys">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Material"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">7</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">15</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Wear -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Wear">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Parameter"/>
+        <rdfs:comment>3 possible state : fresh --&gt; aged --&gt; old</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Wood -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Wood">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Material"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">19</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://artimimds/RoboGrind/Grinding#hasCuttingSpeed"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">33</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#Workpiece -->
+
+    <owl:Class rdf:about="http://artimimds/RoboGrind/Grinding#Workpiece">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalBody"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#aluminium_and_alloys -->
+
+    <owl:NamedIndividual rdf:about="http://artimimds/RoboGrind/Grinding#aluminium_and_alloys">
+        <rdf:type rdf:resource="http://artimimds/RoboGrind/Grinding#Aluminium_and_Alloys"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#blade1 -->
+
+    <owl:NamedIndividual rdf:about="http://artimimds/RoboGrind/Grinding#blade1">
+        <rdf:type rdf:resource="http://artimimds/RoboGrind/Grinding#Blade"/>
+        <Grinding:hasMaterial rdf:resource="http://artimimds/RoboGrind/Grinding#rubber"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#brass_and_bronze -->
+
+    <owl:NamedIndividual rdf:about="http://artimimds/RoboGrind/Grinding#brass_and_bronze">
+        <rdf:type rdf:resource="http://artimimds/RoboGrind/Grinding#Brass_and_Bronze"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#carbon_steel -->
+
+    <owl:NamedIndividual rdf:about="http://artimimds/RoboGrind/Grinding#carbon_steel">
+        <rdf:type rdf:resource="http://artimimds/RoboGrind/Grinding#Carbon_Steel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#cast_iron -->
+
+    <owl:NamedIndividual rdf:about="http://artimimds/RoboGrind/Grinding#cast_iron">
+        <rdf:type rdf:resource="http://artimimds/RoboGrind/Grinding#Cast_Iron"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#glass -->
+
+    <owl:NamedIndividual rdf:about="http://artimimds/RoboGrind/Grinding#glass">
+        <rdf:type rdf:resource="http://artimimds/RoboGrind/Grinding#Glass"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#lacquers -->
+
+    <owl:NamedIndividual rdf:about="http://artimimds/RoboGrind/Grinding#lacquers">
+        <rdf:type rdf:resource="http://artimimds/RoboGrind/Grinding#Lacquers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#low_alloy_steel -->
+
+    <owl:NamedIndividual rdf:about="http://artimimds/RoboGrind/Grinding#low_alloy_steel">
+        <rdf:type rdf:resource="http://artimimds/RoboGrind/Grinding#Low_Alloy_Steel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#rubber -->
+
+    <owl:NamedIndividual rdf:about="http://artimimds/RoboGrind/Grinding#rubber">
+        <rdf:type rdf:resource="http://artimimds/RoboGrind/Grinding#Rubber"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#stainless_steel -->
+
+    <owl:NamedIndividual rdf:about="http://artimimds/RoboGrind/Grinding#stainless_steel">
+        <rdf:type rdf:resource="http://artimimds/RoboGrind/Grinding#Stainless_Steel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#titanium_alloys -->
+
+    <owl:NamedIndividual rdf:about="http://artimimds/RoboGrind/Grinding#titanium_alloys">
+        <rdf:type rdf:resource="http://artimimds/RoboGrind/Grinding#Titanium_Alloys"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://artimimds/RoboGrind/Grinding#wood -->
+
+    <owl:NamedIndividual rdf:about="http://artimimds/RoboGrind/Grinding#wood">
+        <rdf:type rdf:resource="http://artimimds/RoboGrind/Grinding#Wood"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
